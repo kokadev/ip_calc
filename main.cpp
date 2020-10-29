@@ -21,7 +21,8 @@ int main()
     Show(first);        cout << "FIRST_ADDRESS" << '\n';
     Show(last);         cout << "LAST_ADDRESS" << "\n\n";
 
-    cout << "HOSTS COUNT = " << (int)(1<<(32-netmask_length))-2 <<'\n';
+    cout << "ADRESSES COUNT = " << (int)(1<<(32-netmask_length)) <<'\n';
+    cout << "HOSTS COUNT    = " << (int)(1<<(32-netmask_length))-2 <<'\n';
 
     system("pause");
     return 0;
