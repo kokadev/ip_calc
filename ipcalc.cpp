@@ -38,7 +38,7 @@ vector<int> SplitIntoDigits(const string& text)
     string word;
     for (int i = 0; i < text.length(); ++i)
     {
-        if (text[i] == '.')
+        if (text[i] == '.' || text[i] == ',' || text[i] == ' ')
         {
             digits.push_back(stoi(word));
             word = "";
@@ -54,7 +54,7 @@ vector<int> SplitIntoDigits(const string& text)
 
 bool IsIpv4Address(const string& text)
 {
-    regex regular_ipv4("([0-9]{1,3}[\\.]){3}[0-9]{1,3}");
+    regex regular_ipv4("([0-9]{1,3}[\\.|\\,|\\ ]){3}[0-9]{1,3}");
     return regex_match(text.c_str(), regular_ipv4);
 }
 
@@ -132,7 +132,8 @@ ipv4 GetNetmask(ipv4& mask, unsigned char& netmask_length)
                     cout << "Wrong Netmask!" << endl;
                     break;
                 }
-                else if
+
+                if
                 (
                     (netmask[0]<255 && netmask[1]!=0) ||
                     (netmask[1]<255 && netmask[2]!=0) ||
@@ -155,7 +156,7 @@ ipv4 GetNetmask(ipv4& mask, unsigned char& netmask_length)
                 netmask_length = stoi(mas);
 
 
-                if(netmask_length<0 || netmask_length>32)
+                if(netmask_length<0 && netmask_length>32)
                 {
                 valid_netmask = false;
                 cout << "Wrong IPv4 Mask!" << endl;
@@ -270,10 +271,3 @@ unsigned char GetNetmaskLength(const vector<int>& digits)
 
     return c;
 }
-
-
-
-
-
-
-
