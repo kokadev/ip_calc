@@ -6,4 +6,4 @@ g++.exe -g *.cpp -o main.exe
 
 Short example of program: 
 
-[Alt text](https://github.com/kokadev/koka_ip_calc/blob/main/ip_calc.jpg)
+![Alt text](https://github.com/kokadev/koka_ip_calc/blob/main/ip_calc.jpg?raw=true)
