@@ -100,7 +100,7 @@ void SetIpAddress(ipv4& a)
         if(IsValidIpAddress(mas))
         {
             for(int i = 0; i<4; ++i)
-            {a.ip[i]=mas[i];}  //конечное изменение элемента структуры
+            {a.ip[i]=mas[i];}
             delete[] mas;
         }
         else
